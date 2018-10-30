@@ -1,4 +1,4 @@
-//your variable declarations here
+Spaceship ShipSpace = new Spaceship();
 public void setup() 
 {
   size(1000,1000);
@@ -6,6 +6,8 @@ public void setup()
 }
 public void draw() 
 {
-  //your code here
+	ShipSpace.setX(100);
+  ShipSpace.getX();
 }
+
 
