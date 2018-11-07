@@ -9,11 +9,15 @@ public void setup()
   for (int ratS = 0; ratS < OOF.length;ratS++)
   {
   	OOF[ratS] = new Star();
-  }
 }
+//OOF[0] = new Sun();
 public void draw() 
 {
   background(DefBackground);
+  for (int ratS = 0;ratS < OOF.length;ratS++)
+  {
+  	OOF[ratS].glow();
+  } 
   Andy.show();
   Andy.move();
   while (DefBackground > 0) //Flashes
@@ -30,9 +34,13 @@ public void keyPressed()
 	if (key == 'a') {Andy.turn(-5);}
 	if (key == 'e') //Hypespace
 	{
+		for (int ratS = 0;ratS < OOF.length;ratS++)
+		{
+		OOF[ratS].ResetPos();
+	}
 		for(int Back = 0;Back < 255;Back = Back + 1)
 		{
-			DefBackground = 255;
+			//DefBackground = 255;
 		}
 		background(255);
 		Andy.setX((int)(Math.random()*1000));
