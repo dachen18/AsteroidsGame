@@ -1,0 +1,4 @@
+class Planets extends Star
+{
+	
+}
