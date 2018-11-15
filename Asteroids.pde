@@ -22,10 +22,10 @@ class Asteroids extends Floater
       Moving = (float)Math.random()*10;
 
 	}
-  public void test()
-  {
-    System.out.println(AstC);
-  }
+ // public void test()
+  //{
+   // System.out.println(AstC);
+  //}
    public void move()
    {
       while (RandRot < 501)

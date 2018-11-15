@@ -43,7 +43,7 @@ public void draw()
   {
     Wuster[skcoR].move();
     Wuster[skcoR].show();
-    Wuster[skcoR].test();
+   //Wuster[skcoR].test();
   }
 }
 
