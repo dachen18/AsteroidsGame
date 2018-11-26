@@ -35,15 +35,14 @@ public void draw()
     Wu.glow();
     Wu.SunRays();
   }
-  //while (DefBackground > 0) //Flashes
-  //{
-    //DefBackground = DefBackground - 1;
-  //}
+  while (DefBackground > 0) //Flashes
+  {
+    DefBackground = DefBackground - 1;
+  }
   for (int skcoR = 0;skcoR < Wuster.length;skcoR++)
   {
     Wuster[skcoR].move();
     Wuster[skcoR].show();
-   //Wuster[skcoR].test();
   }
 }
 
@@ -63,7 +62,7 @@ public void keyPressed()
   }
     for(int Back = 0;Back < 255;Back = Back + 1)
     {
-      //DefBackground = 255;
+      //Changes DefBackground to 255
     }
     Andy.setX((int)(Math.random()*1000));
     Andy.getX();

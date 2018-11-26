@@ -12,28 +12,21 @@ class Asteroids extends Floater
       corners = 3;
       myCenterX = Math.random()*1001;
       myCenterY = Math.random()*1001;
-      int[] WusterX = {1,3,2};
-      int[] WusterY = {1,3,4};
-      //int[] WusterX = {1+AstC,1+AstC,1+AstC};
-      //int[] WusterY = {1+AstC,1+AstC,1+AstC};
+      int[] WusterX = {5,15,10};
+      int[] WusterY = {5,15,20};
       xCorners = WusterX;
       yCorners = WusterY;
 		RandRot = 4;
       Moving = (float)Math.random()*10;
-
 	}
- // public void test()
-  //{
-   // System.out.println(AstC);
-  //}
    public void move()
    {
-      while (RandRot < 501)
+      while (RandRot < 100000)
       {
          RandRot +=1;
-
       }
       rotate(RandRot);
+
     myCenterX += myDirectionX;    
     myCenterY += myDirectionY;     
 
