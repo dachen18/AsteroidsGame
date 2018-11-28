@@ -2,21 +2,23 @@ Spaceship Andy = new Spaceship();
 int DefBackground = 0;
 int DetGal;
 Star[] OOF;
+ArrayList <Asteroids> Wuster = new ArrayList<Asteroids>();
 Sun Wu = new Sun();
-Asteroids[] Wuster;
+//Asteroids[] Wuster;
 public void setup() 
 {
   size(1000,1000);
   background(0);
   OOF = new Star[500];
-  Wuster = new Asteroids[100];
+
   for (int ratS = 0; ratS < OOF.length;ratS++)
   {
     OOF[ratS] = new Star();
   }
-  for (int skcoR = 0;skcoR < Wuster.length;skcoR++)
+  for (int skcoR = 0;skcoR < 50;skcoR++)
   {
-    Wuster[skcoR] = new Asteroids();
+    Wuster.add(new Asteroids());
+    //Wuster[skcoR] = new Asteroids();
   }
   frameRate(120);
 }
@@ -39,10 +41,10 @@ public void draw()
   {
     DefBackground = DefBackground - 1;
   }
-  for (int skcoR = 0;skcoR < Wuster.length;skcoR++)
+  for (Asteroids Wuu : Wuster)
   {
-    Wuster[skcoR].move();
-    Wuster[skcoR].show();
+    Wuu.show();
+    Wuu.move();
   }
 }
 

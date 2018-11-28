@@ -1,6 +1,8 @@
 abstract class Floater //Do NOT modify the Floater class! Make changes in the Spaceship class 
 {   
-  protected int corners;  //the number of corners, a triangular floater has 3   
+  protected int corners; 
+  //protected ArrayList <Float> xCorners = new ArrayList <Float>(); 
+  //protected ArrayList <Float> yCorners = new ArrayList <Float>(); //the number of corners, a triangular floater has 3   
   protected int[] xCorners;   
   protected int[] yCorners;   
   protected int myColor;   
@@ -39,15 +41,15 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     myCenterY += myDirectionY;     
 
     //wrap around screen    
-    if(myCenterX >width)
+    if(myCenterX > width)
     {     
       myCenterX = 0;    
     }    
-    else if (myCenterX<0)
+    else if (myCenterX < 0)
     {     
       myCenterX = width;    
     }    
-    if(myCenterY >height)
+    if(myCenterY > height)
     {    
       myCenterY = 0;    
     } 
@@ -75,7 +77,8 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     beginShape();
     for (int nI = 0; nI < corners; nI++)
     {
-      vertex(xCorners[nI], yCorners[nI]);
+      vertex(xCorners[nI],yCorners[nI]);
+      //vertex(xCorners.get(nI),yCorners.get(nI));
     }
     endShape(CLOSE);
 

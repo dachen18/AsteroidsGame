@@ -6,6 +6,14 @@ class Spaceship extends Floater
       myColor = 255;
       corners = 3;
       myCenterX = myCenterY = 500;
+      //ArrayList <Float> AndyX = new ArrayList <Float>();
+      // ArrayList <Float> AndyY = new ArrayList <Float>();
+      //AndyX.set(0,30.0);
+       //AndyX.set(1,-10.0);
+      // AndyX.set(2,-10.0);
+       //AndyY.set(0,0.0);
+      // AndyY.set(1,10.0);
+      // AndyY.set(2,-10.0);
     int[] AndyX = {30,-10,-10};
     int[] AndyY = {0,10,-10};
       xCorners = AndyX;
