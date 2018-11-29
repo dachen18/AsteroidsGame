@@ -2,23 +2,25 @@ class Asteroids extends Floater
 {
 	protected float RandRot;
    protected float Moving;
-    private int AstC1X,AstC2X,AstC3X,AstC4X,AstC1Y,AstC2Y,AstC3Y,AstC4Y;
+    private int AstC1X,AstC2X,AstC3X,AstC4X,AstC1Y,AstC2Y,AstC3Y,AstC4Y,AstMidX,AstMidY;
     private int AstC;
 	Asteroids()
 	{
     AstC = ((int)(Math.random()*4)+4);
     myColor = 255;
-    AstC1X = ((int)(Math.random()*30)-5);
-    AstC2X = ((int)(Math.random()*30)-5);
-    AstC3X = ((int)(Math.random()*30)-5);
-    AstC4X = ((int)(Math.random()*30)-5);
-    AstC1Y = ((int)(Math.random()*30)-5);
-    AstC2Y = ((int)(Math.random()*30)-5);
-    AstC3Y = ((int)(Math.random()*30));
-    AstC4Y = ((int)(Math.random()*30));
-      myDirectionX = Math.random()*30;
-      myDirectionY = Math.random()*30;
-      corners = 4;
+    AstC1X = ((int)(Math.random()*-5)-10);//Neg X Pos Y
+    AstC2X = ((int)(Math.random()*5)+10); //Pos X and Y
+    AstC3X = ((int)(Math.random()*5)+10); //Pos X Neg Y
+    AstC4X = ((int)(Math.random()*-5)-10); // Neg X Neg Y
+    AstMidX = (AstC2X + AstC3X)/2;
+    AstMidY = (AstC2Y + AstC3Y)/2;
+    AstC1Y = ((int)(Math.random()*5)+10);
+    AstC2Y = ((int)(Math.random()*5)+10);
+    AstC3Y = ((int)(Math.random()*-5)-10);
+    AstC4Y = ((int)(Math.random()*-5)-10);
+      myDirectionX = ((Math.random()*15)-7.5);
+      myDirectionY = ((Math.random()*15)-7.5);
+      corners = 5;
       myCenterX = Math.random()*1001;
       myCenterY = Math.random()*1001;
      // ArrayList <Float> WusterX = new ArrayList <Float>();
@@ -35,20 +37,20 @@ class Asteroids extends Floater
       // WusterX.add(AstC2X);
       // WusterY.add(AstC2Y);
      //}
-      int[] WusterX = {AstC1X,AstC2X,AstC3X,AstC4X};
-      int[] WusterY = {AstC1Y,AstC2Y,AstC3Y,AstC4Y};
+    int[] WusterX = {AstC1X,AstC2X,0,AstC3X,AstC4X};
+    int[] WusterY = {AstC1Y,AstC2Y,0,AstC3Y,AstC4Y};
      xCorners = WusterX;
      yCorners = WusterY;
-		  RandRot = 4;
+		  RandRot = 0;
       Moving = (float)Math.random()*10;
 	}
    public void move()
    {
-      while (RandRot < 100000)
-      {
-         RandRot +=1;
-      }
-      rotate(RandRot);
+      //while (RandRot > -1)
+     // {
+     //    RandRot +=5;
+     // }
+     // rotate(RandRot);
     myCenterX += myDirectionX;    
     myCenterY += myDirectionY;     
 

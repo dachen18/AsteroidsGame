@@ -1,6 +1,7 @@
 Spaceship Andy = new Spaceship();
 int DefBackground = 0;
 int DetGal;
+int Rot = 0;
 Star[] OOF;
 ArrayList <Asteroids> Wuster = new ArrayList<Asteroids>();
 Sun Wu = new Sun();
@@ -64,7 +65,7 @@ public void keyPressed()
   }
     for(int Back = 0;Back < 255;Back = Back + 1)
     {
-      //Changes DefBackground to 255
+      //DefBackground = 255;
     }
     Andy.setX((int)(Math.random()*1000));
     Andy.getX();
