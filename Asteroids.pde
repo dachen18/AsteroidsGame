@@ -7,7 +7,7 @@ class Asteroids extends Floater
 	Asteroids()
 	{
     AstC = ((int)(Math.random()*4)+4);
-    myColor = 255;
+    myColor = 215;
     AstC1X = ((int)(Math.random()*-5)-10);//Neg X Pos Y
     AstC2X = ((int)(Math.random()*5)+10); //Pos X and Y
     AstC3X = ((int)(Math.random()*5)+10); //Pos X Neg Y
@@ -23,20 +23,6 @@ class Asteroids extends Floater
       corners = 5;
       myCenterX = Math.random()*1001;
       myCenterY = Math.random()*1001;
-     // ArrayList <Float> WusterX = new ArrayList <Float>();
-     // ArrayList <Float> WusterY = new ArrayList <Float>();
-     // if (AstC == 1)
-     // {
-     //   WusterX.set(0,(AstC1X));
-     //   WusterY.set(0,(AstC1Y));
-      //}
-     // if (AstC == 2)
-    // {
-      // WusterX.add(AstC1X);
-     //  WusterY.add(AstC1Y);
-      // WusterX.add(AstC2X);
-      // WusterY.add(AstC2Y);
-     //}
     int[] WusterX = {AstC1X,AstC2X,0,AstC3X,AstC4X};
     int[] WusterY = {AstC1Y,AstC2Y,0,AstC3Y,AstC4Y};
      xCorners = WusterX;
@@ -46,16 +32,11 @@ class Asteroids extends Floater
 	}
    public void move()
    {
-      //while (RandRot > -1)
-     // {
-     //    RandRot +=5;
-     // }
-     // rotate(RandRot);
     myCenterX += myDirectionX;    
     myCenterY += myDirectionY;     
 
     //wrap around screen    
-    if(myCenterX >width)
+    if(myCenterX > width)
     {     
       myCenterX = 0;    
     }    

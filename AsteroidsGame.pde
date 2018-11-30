@@ -5,6 +5,10 @@ int Rot = 0;
 Star[] OOF;
 ArrayList <Asteroids> Wuster = new ArrayList<Asteroids>();
 Sun Wu = new Sun();
+boolean wIsPressed=false;
+boolean aIsPressed=false;
+boolean sIsPressed=false;
+boolean dIsPressed=false;
 //Asteroids[] Wuster;
 public void setup() 
 {
@@ -16,12 +20,12 @@ public void setup()
   {
     OOF[ratS] = new Star();
   }
-  for (int skcoR = 0;skcoR < 50;skcoR++)
+  for (int skcoR = 0;skcoR < 25;skcoR++)
   {
     Wuster.add(new Asteroids());
     //Wuster[skcoR] = new Asteroids();
   }
-  frameRate(120);
+  frameRate(500);
 }
 public void draw() 
 {
@@ -47,15 +51,52 @@ public void draw()
     Wuu.show();
     Wuu.move();
   }
+   if (wIsPressed == true){
+    Andy.accelerate(.45);
+  }
+    if (sIsPressed == true){
+    Andy.accelerate(-.45);
+  }
+  if (dIsPressed == true){
+    Andy.turn(4);
+}
+  if (aIsPressed == true){
+    Andy.turn(-4);
+  }
+   if (wIsPressed == false){
+    Andy.accelerate(0);
+  }
+   if (sIsPressed == false){
+    Andy.accelerate(0);
+  }
 }
 
-public void keyPressed()
-{
-  if (key == 'w') {Andy.accelerate(0.75);}
-  if (key == 's') {Andy.accelerate(-0.75);}
-  if (key == 'd') {Andy.turn(5);}
-  if (key == 'a') {Andy.turn(-5);}
-  if (key == 'e') //Hypespace
+//public void keyPressed()
+//{
+ // if (key == 'w') {Andy.accelerate(0.5);}
+ // if (key == 's') {Andy.accelerate(-0.5);}
+ // if (key == 'd') {Andy.turn(10);}
+  //if (key == 'a') {Andy.turn(-10);}//Hypespace
+ // if (key == 'w' && key == 'a')
+ // { 
+ //   Andy.turn(-10);  
+  //  Andy.accelerate(0.5);
+  //}
+  //}
+    public void keyPressed() {
+  if (key == 'w') {
+    wIsPressed=true;
+  }
+    if (key == 's') {
+    sIsPressed=true;
+  }
+    if (key == 'd') {
+    dIsPressed=true;
+  }
+ if (key == 'a') {
+    aIsPressed=true;
+  }
+    if (key == 'e') 
   {
    background(0);
   for (int ratS =0;ratS < OOF.length;ratS++)
@@ -79,6 +120,20 @@ public void keyPressed()
     Andy.getPointDirection();
     background(0);
     DetGal = (int)(Math.random()*2);
-  }
-
 }
+}
+//God Bless Andy
+  public void keyReleased() {
+    if (key == 'w') {
+      wIsPressed=false;
+    }
+      if (key == 's') {
+    sIsPressed=false;
+  }
+   if (key == 'd') {
+    dIsPressed=false;
+  }
+   if (key == 'a') {
+    aIsPressed=false;
+  }
+  }
