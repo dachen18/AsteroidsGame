@@ -22,14 +22,17 @@ public void setup()
   }
   for (int skcoR = 0;skcoR < 25;skcoR++)
   {
-    Wuster.add(new Asteroids());
+    //Wuster.add(new Asteroids());
     //Wuster[skcoR] = new Asteroids();
   }
-  frameRate(500);
+  frameRate(144);
 }
 public void draw() 
 {
   background(DefBackground);
+  //stroke(255);
+  //textSize(20);
+  //text((int)Andy.getDirectionX(),900,700);
   for (int ratS = 0;ratS < OOF.length;ratS++)
  {
    fill(200);
@@ -52,16 +55,16 @@ public void draw()
     Wuu.move();
   }
    if (wIsPressed == true){
-    Andy.accelerate(.45);
+    Andy.accelerate(.05);
   }
     if (sIsPressed == true){
-    Andy.accelerate(-.45);
+    Andy.accelerate(-.05);
   }
   if (dIsPressed == true){
-    Andy.turn(4);
+    Andy.turn(2);
 }
   if (aIsPressed == true){
-    Andy.turn(-4);
+    Andy.turn(-2);
   }
    if (wIsPressed == false){
     Andy.accelerate(0);
