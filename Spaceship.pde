@@ -33,39 +33,39 @@ class Spaceship extends Floater
   public void accelerate(double dAmount)
   {
     double dRadians = myPointDirection*(Math.PI/180);
-    if (wIsPressed == true || sIsPressed == true && myDirectionX >= 7.5)
+    if (myDirectionX >= 9)
     {
-      myDirectionX = 7.5;
+      myDirectionX = 9;
     }
     else
     {
       myDirectionX += ((dAmount) * Math.cos(dRadians));
     }
-    if (sIsPressed == true || sIsPressed == true && myDirectionY >= 7.5)
+    if (myDirectionX <= -9)
     {
-      myDirectionY = 7.5;
-    }
-    else 
-    {
-     myDirectionY += ((dAmount) * Math.sin(dRadians)); 
-    }
-    if (sIsPressed == true || wIsPressed == true && myDirectionX <= -7.5)
-    {
-      myDirectionX = -7.5;
+      myDirectionX = -9;
     }
     else
     {
         myDirectionX += ((dAmount) * Math.cos(dRadians));
+    } 
+    if (myDirectionY >= 9)
+    {
+      myDirectionY = 9;
     }
-     if (sIsPressed == true || wIsPressed == true && myDirectionY <= -7.5)
-     {
-      myDirectionY = -7.5;
-     }
-     else 
-     {
-       myDirectionY += ((dAmount) * Math.sin(dRadians)); 
-     }       
-     }
+    else
+    {
+      myDirectionY += ((dAmount) * Math.sin(dRadians));
+    }
+    if (myDirectionY <= -9)
+    {
+      myDirectionY = -9;
+    }
+    else
+    {
+      myDirectionY += ((dAmount) * Math.sin(dRadians));
+    }
+    }
     }
     
 

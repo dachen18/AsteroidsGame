@@ -32,7 +32,8 @@ public void draw()
   background(DefBackground);
   //stroke(255);
   //textSize(20);
-  //text((int)Andy.getDirectionX(),900,700);
+  text((int)Andy.getDirectionX(),900,700);
+  text((int)Andy.getDirectionY(),900,800);
   for (int ratS = 0;ratS < OOF.length;ratS++)
  {
    fill(200);
@@ -54,10 +55,38 @@ public void draw()
     Wuu.show();
     Wuu.move();
   }
-   if (wIsPressed == true){
+   if (wIsPressed == true && dIsPressed == true)
+  {
+    Andy.accelerate(.5);
+     Andy.turn(2);
+   }
+   else  if (wIsPressed == true && aIsPressed == true)
+   {
+    Andy.accelerate(.5);
+     Andy.turn(-2);
+   }
+   else if (sIsPressed == true && dIsPressed == true)
+   {
+     Andy.accelerate(-.5);
+     Andy.turn(2);
+   }
+   else if (sIsPressed == true && aIsPressed == true)
+   {
+     Andy.accelerate(-.5);
+     Andy.accelerate(-2);
+   }
+   else
+   {
+   OneButton(); 
+   }
+}
+void OneButton()
+{
+    if (wIsPressed == true){
     Andy.accelerate(.05);
   }
-    if (sIsPressed == true){
+    if (sIsPressed == true)
+    {
     Andy.accelerate(-.05);
   }
   if (dIsPressed == true){
@@ -66,26 +95,13 @@ public void draw()
   if (aIsPressed == true){
     Andy.turn(-2);
   }
-   if (wIsPressed == false){
-    Andy.accelerate(0);
-  }
-   if (sIsPressed == false){
-    Andy.accelerate(0);
-  }
+//    if (wIsPressed == false){
+//     Andy.accelerate(0);
+//   }
+//    if (sIsPressed == false){
+//     Andy.accelerate(0);
+// }
 }
-
-//public void keyPressed()
-//{
- // if (key == 'w') {Andy.accelerate(0.5);}
- // if (key == 's') {Andy.accelerate(-0.5);}
- // if (key == 'd') {Andy.turn(10);}
-  //if (key == 'a') {Andy.turn(-10);}//Hypespace
- // if (key == 'w' && key == 'a')
- // { 
- //   Andy.turn(-10);  
-  //  Andy.accelerate(0.5);
-  //}
-  //}
     public void keyPressed() {
   if (key == 'w') {
     wIsPressed=true;
@@ -126,11 +142,12 @@ public void draw()
 }
 }
 //God Bless Andy
-  public void keyReleased() {
+ public void keyReleased() {
     if (key == 'w') {
       wIsPressed=false;
     }
-      if (key == 's') {
+      if (key == 's') 
+      {
     sIsPressed=false;
   }
    if (key == 'd') {
