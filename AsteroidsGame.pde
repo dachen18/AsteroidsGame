@@ -4,6 +4,7 @@ int DetGal;
 int Rot = 0;
 Star[] OOF;
 ArrayList <Asteroids> Wuster = new ArrayList<Asteroids>();
+ArrayList <Bullet> MaxRanged = new ArrayList<Bullet>();
 Sun Wu = new Sun();
 boolean wIsPressed=false;
 boolean aIsPressed=false;
@@ -22,13 +23,20 @@ public void setup()
   }
   for (int skcoR = 0;skcoR < 25;skcoR++)
   {
-    //Wuster.add(new Asteroids());
+    Wuster.add(new Asteroids());
     //Wuster[skcoR] = new Asteroids();
   }
+  for (int stelluB = 0; stelluB < 50;stelluB++)
+  {
+    MaxRanged.add(new Bullet());
+  }
+
   frameRate(144);
 }
+
 public void draw() 
 {
+  System.out.println(MaxRanged.size());
   background(DefBackground);
   //stroke(255);
   //textSize(20);
@@ -55,6 +63,12 @@ public void draw()
     Wuu.show();
     Wuu.move();
   }
+  for (Bullet GlobalElite : MaxRanged)
+  {
+    GlobalElite.show();
+    GlobalElite.move();
+  }
+  
    if (wIsPressed == true && dIsPressed == true)
   {
     Andy.accelerate(.5);
@@ -83,11 +97,11 @@ public void draw()
 void OneButton()
 {
     if (wIsPressed == true){
-    Andy.accelerate(.05);
+    Andy.accelerate(.5);
   }
     if (sIsPressed == true)
     {
-    Andy.accelerate(-.05);
+    Andy.accelerate(-.5);
   }
   if (dIsPressed == true){
     Andy.turn(2);
@@ -142,7 +156,7 @@ void OneButton()
 }
 }
 //God Bless Andy
- public void keyReleased() {
+public void keyReleased() {
     if (key == 'w') {
       wIsPressed=false;
     }
@@ -157,3 +171,4 @@ void OneButton()
     aIsPressed=false;
   }
   }
+
