@@ -1,10 +1,15 @@
 class Bullet extends Floater
 { 
+  private double dRadians;
 	Bullet()
 	{
-
+    myCenterX = Andy.getX();
+    myCenterY = Andy.getY();
+    myPointDirection = Andy.getPointDirection();
+    myDirectionX = 5 * Math.cos(dRadians) + Andy.getDirectionX();
+    myDirectionY = 5 * Math.sin(dRadians) + Andy.getDirectionY();
+    double dRadians = myPointDirection*(Math.PI/180);
 	}
-	double dRadians = myPointDirection*(Math.PI/180);
   public void setX(int x) {myCenterX = Andy.getX();}  
   public int getX()   {return (int)myCenterX;}
   public void setY(int y) {myCenterY = Andy.getY();}
@@ -19,5 +24,9 @@ class Bullet extends Floater
   {
   	fill(255);
   	ellipse((float)myCenterX,(float)myCenterY,5,5);
+  }
+  public void move()
+  {
+    super.show();
   }
 }
